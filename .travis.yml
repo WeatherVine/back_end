@@ -6,8 +6,8 @@ addons:
 before_install:
 - gem install bundler:2.1.4
 script:
-- bundle exec rails db:{create,migrate} RAILS_ENV=test
-- bundle exec rspec
+# - bundle exec rails db:{create,migrate} RAILS_ENV=test
+# - bundle exec rspec
 deploy:
   provider: heroku
   api_key:
