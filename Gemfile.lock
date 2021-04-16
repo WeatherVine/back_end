@@ -68,6 +68,8 @@ GEM
     faraday-net_http (1.0.1)
     faraday_middleware (1.0.0)
       faraday (~> 1.0)
+    fast_jsonapi (1.5)
+      activesupport (>= 4.2)
     ffi (1.15.0)
     figaro (1.2.0)
       thor (>= 0.14.0, < 2)
@@ -212,6 +214,7 @@ DEPENDENCIES
   factory_bot_rails
   faker
   faraday
+  fast_jsonapi
   figaro
   listen (>= 3.0.5, < 3.2)
   pg (>= 0.18, < 2.0)
@@ -228,4 +231,4 @@ RUBY VERSION
    ruby 2.5.3p105
 
 BUNDLED WITH
-   2.2.8
+   2.2.11
