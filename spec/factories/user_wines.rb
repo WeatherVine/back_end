@@ -1,7 +1,11 @@
 FactoryBot.define do
   factory :user_wine do
-    wine { nil }
-    user_id { 1 }
-    comment { "MyString" }
+    wine
+    
+    sequence :user_id do |n|
+      n
+    end
+
+    comment { Faker::Lorem.sentence }
   end
 end
