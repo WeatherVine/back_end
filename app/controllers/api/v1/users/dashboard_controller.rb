@@ -7,6 +7,6 @@ class Api::V1::Users::DashboardController < ApplicationController
   private
 
   def fetch_dashboard_data(user_id)
-    user_wines = UserWine.for_user_dashboard(user_id)
+    UserWine.for_user_dashboard(user_id)
   end
 end

@@ -1,5 +1,5 @@
 class Wine < ApplicationRecord
-  has_many :user_wines
-  validates_uniqueness_of :api_id
-  validates_presence_of :name
+  has_many :user_wines, dependent: :destroy
+  validates :api_id, uniqueness: true
+  validates :name, presence: true
 end

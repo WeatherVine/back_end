@@ -1,6 +1,6 @@
 class UserWine < ApplicationRecord
   belongs_to :wine
-  validates_presence_of :user_id
+  validates :user_id, presence: true
 
   def self.for_user_dashboard(user_id)
     joins(:wine)
