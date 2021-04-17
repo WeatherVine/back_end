@@ -40,4 +40,15 @@ RSpec.describe 'Dashboard Data Request' do
       expect(attributes[:comment]).to eq(user_wine.comment)
     end
   end
+
+  describe 'sad path' do
+    it 'returns empty data if user_id does not exist' do
+      get api_v1_users_dashboard_path(-1)
+
+      expect(response).to be_successful
+      body = JSON.parse(response.body, symbolize_names: true)
+
+      expect(body[:data]).to be_empty
+    end
+  end
 end
