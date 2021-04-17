@@ -57,10 +57,6 @@ RSpec.describe 'the wine search request' do
       expect(attributes[:region]).to eq('Napa Valley')
     end
   end
-  # describe 'sad path' do
-    # it '' do
-    # end
-  # end
 
   def stub_microservice_request(body)
     full_url = "#{ENV['WINE_MICROSERVICE_URL']}/api/v1/search?region=napa&vintage=2018"
@@ -72,11 +68,3 @@ RSpec.describe 'the wine search request' do
       )
   end
 end
-=begin
-{"data":[{"id":"1","type":"wine","attributes":{"api_id":"5f065fb5fbfd6e17acaad294","name":"Duckhorn The Discussion Red 2012","vintage":"2018","region":"Napa Valley"}},{"id":"2","type":"wine","attributes":{"api_id":"546e64cf4c6458020000000d","name":"Duckhorn","vintage":"2018","region":"Napa Valley"}}]}
-=end
-
-# res = File.read('spec/fixtures/wines_search_results.json')
-# out = JSON.parse(res)
-
-# expect(res[:data].length).to eq(2)
