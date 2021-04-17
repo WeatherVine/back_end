@@ -4,6 +4,9 @@ Rails.application.routes.draw do
       namespace :users do
         get '/:id/dashboard', to: 'dashboard#show', as: 'dashboard'
       end
+      namespace :wines do
+        get '/search', to: 'search#index'
+      end
     end
   end
 end
