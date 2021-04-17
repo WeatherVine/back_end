@@ -6,16 +6,9 @@ RSpec.describe 'the wine search request' do
       expected_raw = File.read('spec/fixtures/wines_search_results.json')
       expected = JSON.parse!(expected_raw, symbolize_names: true)
 
-      full_url = "#{ENV['WEATHER_MICROSERVICE_URL']}/api/v1/search?region=napa&vintage=2018"
-      # stub_request(:get, full_url).to_return(body: expected.to_s)
-      stub_request(:get, full_url)
-        .to_return(
-          status: 200,
-          body: expected_raw,
-          headers: {'Content-Type'=> 'application/json'}
-        )
+      stub_microservice_request(expected)
 
-      get api_v1_wines_search_path
+      get api_v1_wines_search_path(region: 'napa', vintage: '2018')
 
       expect(response).to be_successful
       data = JSON.parse(response.body, symbolize_names: true)
@@ -33,12 +26,11 @@ RSpec.describe 'the wine search request' do
       expect(second[:attributes].keys).to eq([:api_id, :name, :vintage, :region])
     end
 
-    it "returns correct content" do
+    xit "returns correct content" do
       expected_raw = File.read('spec/fixtures/wines_search_results.json')
       expected = JSON.parse!(expected_raw, symbolize_names: true)
 
-      full_url = "#{ENV['WEATHER_MICROSERVICE_URL']}/api/v1/search?region=napa&vintage=2018"
-      stub_request(:get, full_url).to_return(body: expected)
+      stub_microservice_request(expected)
 
       get api_v1_wines_search_path
 
@@ -54,6 +46,16 @@ RSpec.describe 'the wine search request' do
     # it '' do
     # end
   # end
+
+  def stub_microservice_request(body)
+    full_url = "#{ENV['WINE_MICROSERVICE_URL']}/api/v1/search?region=napa&vintage=2018"
+    stub_request(:get, full_url)
+      .to_return(
+        status: 200,
+        body: body.to_json,
+        headers: {'Content-Type'=> 'application/json'}
+      )
+  end
 end
 =begin
 {"data":[{"id":"1","type":"wine","attributes":{"api_id":"5f065fb5fbfd6e17acaad294","name":"Duckhorn The Discussion Red 2012","vintage":"2018","region":"Napa Valley"}},{"id":"2","type":"wine","attributes":{"api_id":"546e64cf4c6458020000000d","name":"Duckhorn","vintage":"2018","region":"Napa Valley"}}]}
