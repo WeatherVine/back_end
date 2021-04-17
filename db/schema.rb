@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 2021_04_15_230016) do
     t.string "comment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_user_wines_on_user_id", unique: true
+    t.index ["user_id"], name: "index_user_wines_on_user_id"
     t.index ["wine_id"], name: "index_user_wines_on_wine_id"
   end
 
