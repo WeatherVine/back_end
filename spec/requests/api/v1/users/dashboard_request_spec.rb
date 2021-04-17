@@ -15,28 +15,29 @@ RSpec.describe 'Dashboard Data Request' do
       expect(body).to have_key(:data)
 
       data = body[:data]
-
       expect(data).to be_an(Array)
       expect(data.size).to eq(1)
 
       favorite_wine = data[0]
-
       expect(favorite_wine).to have_key(:id)
-      expect(favorite_wine[:id]).to be_an(Integer)
-      expect(favorite_wine).to have_key(:name)
-      expect(favorite_wine[:name])to be_a(String)
+      expect(favorite_wine[:id]).to be_an(String)
+      expect(favorite_wine[:id]).to eq(user_wine.id.to_s)
+      expect(favorite_wine).to have_key(:type)
+      expect(favorite_wine[:type]).to be_a(String)
+      expect(favorite_wine[:type]).to eq('favorite_wine')
       expect(favorite_wine).to have_key(:attributes)
       expect(favorite_wine[:attributes]).to be_a(Hash)
 
       attributes = favorite_wine[:attributes]
-
       expect(attributes).to have_key(:api_id)
       expect(attributes[:api_id]).to be_a(String)
+      expect(attributes[:api_id]).to eq(wine.api_id.to_s)
       expect(attributes).to have_key(:name)
       expect(attributes[:name]).to be_a(String)
+      expect(attributes[:name]).to eq(wine.name)
       expect(attributes).to have_key(:comment)
       expect(attributes[:comment]).to be_a(String)
+      expect(attributes[:comment]).to eq(user_wine.comment)
     end
-    # TODO: assert values as part of this test or in a new test.
   end
 end
