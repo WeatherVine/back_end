@@ -61,10 +61,10 @@ GEM
       railties (>= 5.0.0)
     faker (2.17.0)
       i18n (>= 1.6, < 2)
-    faraday (1.3.0)
+    faraday (1.3.1)
       faraday-net_http (~> 1.0)
       multipart-post (>= 1.2, < 3)
-      ruby2_keywords
+      ruby2_keywords (>= 0.0.4)
     faraday-net_http (1.0.1)
     faraday_middleware (1.0.0)
       faraday (~> 1.0)
@@ -102,6 +102,7 @@ GEM
     marcel (1.0.1)
     method_source (1.0.0)
     mini_mime (1.1.0)
+    mini_portile2 (2.5.0)
     minitest (5.14.4)
     msgpack (1.4.2)
     multi_json (1.15.0)
@@ -109,9 +110,8 @@ GEM
     net-http-persistent (2.9.4)
     net-http-pipeline (1.0.1)
     nio4r (2.5.7)
-    nokogiri (1.11.3-x86_64-darwin)
-      racc (~> 1.4)
-    nokogiri (1.11.3-x86_64-linux)
+    nokogiri (1.11.3)
+      mini_portile2 (~> 2.5.0)
       racc (~> 1.4)
     pg (1.2.3)
     pry (0.14.1)
@@ -207,8 +207,6 @@ GEM
 
 PLATFORMS
   ruby
-  x86_64-darwin-19
-  x86_64-linux
 
 DEPENDENCIES
   bootsnap (>= 1.1.0)
@@ -232,4 +230,4 @@ RUBY VERSION
    ruby 2.5.3p105
 
 BUNDLED WITH
-   2.2.11
+   2.1.4
