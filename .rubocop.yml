@@ -1,6 +1,8 @@
 require: rubocop-rails
 
 AllCops:
+  SuggestExtensions: false
+
   Exclude:
     - 'bin/**/*'
     - 'config/**/*'
