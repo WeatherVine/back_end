@@ -6,12 +6,15 @@ end
 
 def fetch_all_the_things(wine_api_id)
   # Need to get wine info
-  result = fetch_raw_wine_data(wine_api_id)
-  formatted_wine_data = format_wine_data(result)
+  response = fetch_raw_wine_data(wine_api_id)
+  parsed_response = JSON.parse(response.body, symbolize_names: true)
+  formatted_wine_data = format_wine_data(parsed_response[:data])
 
   # Need to get weather info
+  formatted_weather_data = fake_weather_data
 
   # Need to combine the two
+  combine_data(formatted_wine_data, formatted_weather_data)
 end
 
 def fetch_raw_wine_data(api_id)
@@ -42,6 +45,22 @@ def wine_connection
   @wine_connection ||= Faraday.new({
     url: ENV['WINE_MICROSERVICE_URL']
   })
+end
+
+def fake_weather_data
+  OpenStruct.new({
+    temp: '55',
+    precip: '20',
+    start_date: '2018-01-01',
+    end_date: '2018-12-31'
+  })
+end
+
+def combine_data(wine_data, weather_data)
+  # TODO: going to have to change how this works
+  # Need to get the wine & weather data to be hashes & not ostructs, I think
+  # So we can save the data transforming time/cost
+  f = wine_data.to_h.merge(weather_data.to_h)
 end
 
 # TODO: notes
