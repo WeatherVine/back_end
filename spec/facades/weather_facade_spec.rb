@@ -12,4 +12,13 @@ RSpec.describe 'the weather facade' do
       expect(response).to be_an(OpenStruct)
     end
   end
+  def stub_microservice_request(body)
+    full_url = "#{ENV['WEATHER_MICROSERVICE_URL']}/climate_data?vintage=2015&region=napa+valley"
+    stub_request(:get, full_url)
+      .to_return(
+        status: 200,
+        body: body.to_json,
+        headers: {'Content-Type'=> 'application/json'}
+      )
+  end
 end
