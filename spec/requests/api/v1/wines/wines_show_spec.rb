@@ -8,7 +8,7 @@ RSpec.describe 'the wine show request' do
 
       stub_microservice_request(expected)
 
-      get api_v1_weather_path(id: @wine.api_id)
+      get api_v1_wine_path(id: @wine.api_id)
 
       expect(response).to be_successful
       result = JSON.parse(response.body, symbolize_names: true)
