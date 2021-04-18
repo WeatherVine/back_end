@@ -8,7 +8,7 @@ RSpec.describe 'the wine search request' do
 
       stub_microservice_request(expected)
 
-      get api_v1_wines_search_path(region: 'napa', vintage: '2018')
+      get api_v1_wines_search_path(location: 'napa', vintage: '2018')
 
       expect(response).to be_successful
       data = JSON.parse(response.body, symbolize_names: true)
@@ -19,11 +19,11 @@ RSpec.describe 'the wine search request' do
 
       first = data[:data].first
       expect(first.keys).to eq([:id, :type, :attributes])
-      expect(first[:attributes].keys).to eq([:api_id, :name, :vintage, :region])
+      expect(first[:attributes].keys).to eq([:api_id, :name, :vintage, :location])
 
       second = data[:data].last
       expect(second.keys).to eq([:id, :type, :attributes])
-      expect(second[:attributes].keys).to eq([:api_id, :name, :vintage, :region])
+      expect(second[:attributes].keys).to eq([:api_id, :name, :vintage, :location])
     end
 
     it "returns correct content" do
@@ -32,7 +32,7 @@ RSpec.describe 'the wine search request' do
 
       stub_microservice_request(expected)
 
-      get api_v1_wines_search_path(region: 'napa', vintage: '2018')
+      get api_v1_wines_search_path(location: 'napa', vintage: '2018')
 
       expect(response).to be_successful
       data = JSON.parse(response.body, symbolize_names: true)
@@ -44,7 +44,7 @@ RSpec.describe 'the wine search request' do
       expect(attributes[:api_id]).to eq('5f065fb5fbfd6e17acaad294')
       expect(attributes[:name]).to eq('Duckhorn The Discussion Red 2012')
       expect(attributes[:vintage]).to eq('2018')
-      expect(attributes[:region]).to eq('Napa Valley')
+      expect(attributes[:location]).to eq('Napa Valley')
 
 
       second = data[:data].last
@@ -54,12 +54,12 @@ RSpec.describe 'the wine search request' do
       expect(attributes[:api_id]).to eq('546e64cf4c6458020000000d')
       expect(attributes[:name]).to eq('Duckhorn')
       expect(attributes[:vintage]).to eq('2018')
-      expect(attributes[:region]).to eq('Napa Valley')
+      expect(attributes[:location]).to eq('Napa Valley')
     end
   end
 
   def stub_microservice_request(body)
-    full_url = "#{ENV['WINE_MICROSERVICE_URL']}/api/v1/search?region=napa&vintage=2018"
+    full_url = "#{ENV['WINE_MICROSERVICE_URL']}/wine-data?location=napa&vintage=2018"
     stub_request(:get, full_url)
       .to_return(
         status: 200,
