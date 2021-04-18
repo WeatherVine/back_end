@@ -17,7 +17,6 @@ class WeatherFacade
 
   def self.format_weather_data(data)
     weather = data[:data][:attributes]
-    require "pry"; binding.pry
     OpenStruct.new({
       precip:     weather[:precip],
       temp:       weather[:temp],
