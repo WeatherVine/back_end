@@ -1,5 +1,5 @@
 {
-  "data": [
+  "data":
     {
       "id": "1",
       "type": "climate_data",
@@ -12,5 +12,4 @@
         "end_date": "2014-12-31"
       }
     }
-  ]
 }

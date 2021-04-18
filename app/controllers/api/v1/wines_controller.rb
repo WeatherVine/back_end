@@ -10,7 +10,8 @@ def fetch_all_the_things(wine_api_id)
   formatted_wine_data = format_wine_data(result)
 
   # Need to get weather info
-
+  weather_data = WeatherFacade.fetch_weather(wine_vintage, wine_region)
+  # add weather data to formatted_wine_data
   # Need to combine the two
 end
 
