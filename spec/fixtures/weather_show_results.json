@@ -1,0 +1,16 @@
+{
+  "data": [
+    {
+      "id": "1",
+      "type": "climate_data",
+      "attributes": {
+        "region": "napa valley",
+        "vintage": "2015",
+        "temp": "50",
+        "precip": "0.1",
+        "start_date": "2014-01-01",
+        "end_date": "2014-12-31"
+      }
+    }
+  ]
+}
