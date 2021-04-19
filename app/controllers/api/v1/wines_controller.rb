@@ -12,10 +12,10 @@ def fetch_all_the_things(wine_api_id)
   formatted_wine_data = format_wine_data(parsed_response[:data])
 
   # Need to get weather info
-  formatted_weather_data = fake_weather_data
+  weather_data = WeatherFacade.fetch_weather(formatted_wine_data.vintage, formatted_wine_data.area)
 
   # Need to combine the two (and return the value)
-  combine_data(formatted_wine_data, formatted_weather_data)
+  combine_data(formatted_wine_data, weather_data)
 end
 
 def fetch_raw_wine_data(api_id)
@@ -44,15 +44,6 @@ end
 def wine_connection
   @wine_connection ||= Faraday.new({
     url: ENV['WINE_MICROSERVICE_URL']
-  })
-end
-
-def fake_weather_data
-  OpenStruct.new({
-    temp: '55',
-    precip: '20',
-    start_date: '2018-01-01',
-    end_date: '2018-12-31'
   })
 end
 

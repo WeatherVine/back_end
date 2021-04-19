@@ -7,6 +7,7 @@ RSpec.describe 'the wine show request' do
       expected = JSON.parse(expected_raw, symbolize_names: true)
 
       stub_microservice_request(expected)
+      stub_weather_microservice_request
 
       get api_v1_wine_path(id: @wine.api_id)
 
@@ -29,6 +30,7 @@ RSpec.describe 'the wine show request' do
       expected = JSON.parse(expected_raw, symbolize_names: true)
 
       stub_microservice_request(expected)
+      stub_weather_microservice_request
 
       get api_v1_wine_path(id: @wine.api_id)
 
@@ -49,10 +51,10 @@ RSpec.describe 'the wine show request' do
       expect(wine[:mouth]).to eq('Citrus, Earthy flavours, Fresh acidity, Warm alcohol')
       expect(wine[:finish]).to eq('Medium duration, Good quality, Middle peaktime')
       expect(wine[:overall]).to eq('Subtle complexity, Pleasant interest, Harmonious balance')
-      expect(wine[:temp]).to eq('55')
-      expect(wine[:precip]).to eq('20')
-      expect(wine[:start_date]).to eq('2018-01-01')
-      expect(wine[:end_date]).to eq('2018-12-31')
+      expect(wine[:temp]).to eq('50')
+      expect(wine[:precip]).to eq('0.1')
+      expect(wine[:start_date]).to eq('2014-01-01')
+      expect(wine[:end_date]).to eq('2014-12-31')
     end
   end
 
@@ -64,6 +66,19 @@ RSpec.describe 'the wine show request' do
       .to_return(
         status: 200,
         body: body.to_json,
+        headers: {'Content-Type'=> 'application/json'}
+      )
+  end
+
+  def stub_weather_microservice_request
+    expected_raw = File.read('spec/fixtures/weather_show_results.json')
+    expected = JSON.parse!(expected_raw, symbolize_names: true)
+
+    full_url = "#{ENV['WEATHER_MICROSERVICE_URL']}/climate_data?vintage=2018&region=Napa%20Valley"
+    stub_request(:get, full_url)
+      .to_return(
+        status: 200,
+        body: expected.to_json,
         headers: {'Content-Type'=> 'application/json'}
       )
   end
