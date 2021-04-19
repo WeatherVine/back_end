@@ -19,7 +19,7 @@ def fetch_all_the_things(wine_api_id)
 end
 
 def fetch_raw_wine_data(api_id)
-  wine_connection.get("/wine-single?id=#{api_id}")
+  wine_connection.get("/api/v1/wine-single?id=#{api_id}")
 end
 
 # Disabling rubocop method length for this method, since it's over the length
@@ -57,47 +57,10 @@ def fake_weather_data
 end
 
 def combine_data(wine_data, weather_data)
-  # TODO: going to have to change how this works
-  # Need to get the wine & weather data to be hashes & not ostructs, I think
-  # So we can save the data transforming time/cost
+  # TODO: should we change how this works
+  #   e.g. leave the wine & weather data to be hashes (& not ostructs)
+  #        So we can save the data transforming time/cost
   merged = wine_data.to_h.merge(weather_data.to_h)
   merged[:id] = nil
   OpenStruct.new(merged)
 end
-
-# TODO: notes
-# Need wine show page serializer
-# Feed that obj into serializer & render it
-
-# class Api::V1::Wines::SearchController < ApplicationController
-#   def index
-#     render json: WineSearchResultSerializer.new(fetch_search_results(params[:region], params[:vintage]))
-#   end
-#
-#   private
-#
-#   def fetch_search_results(region, vintage)
-#     response = wine_service_connection.get("/api/v1/search?region=#{region}&vintage=#{vintage}")
-#     wines = JSON.parse(response.body, symbolize_names: true)
-#
-#     format_wine_response(wines[:data])
-#   end
-#
-#   def wine_service_connection
-#     @wine_service_connection ||= Faraday.new({
-#       url: ENV['WINE_MICROSERVICE_URL']
-#     })
-#   end
-#
-#   def format_wine_response(wines)
-#     wines.map do |wine|
-#       attributes = wine[:attributes]
-#       OpenStruct.new({
-#         api_id: attributes[:api_id],
-#         name: attributes[:name],
-#         vintage: attributes[:vintage],
-#         region: attributes[:region]
-#       })
-#     end
-#   end
-# end

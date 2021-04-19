@@ -59,7 +59,7 @@ RSpec.describe 'the wine show request' do
   def stub_microservice_request(body)
     @wine = create(:wine, api_id: '546e64cf4c6458020000000d', name: 'Duckhorn Sauvignon Blanc')
 
-    full_url = "#{ENV['WINE_MICROSERVICE_URL']}/wine-single?id=#{@wine.api_id}"
+    full_url = "#{ENV['WINE_MICROSERVICE_URL']}/api/v1/wine-single?id=#{@wine.api_id}"
     stub_request(:get, full_url)
       .to_return(
         status: 200,
