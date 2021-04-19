@@ -1,23 +1,23 @@
 {
   "data": [
     {
-      "id": "1",
-      "type": "wine",
+      "id": null,
+      "type": "wines",
       "attributes": {
         "api_id": "5f065fb5fbfd6e17acaad294",
         "name": "Duckhorn The Discussion Red 2012",
-        "vintage": "2018",
-        "region": "Napa Valley"
+        "area": "Napa Valley",
+        "vintage": "2018"
       }
     },
     {
-      "id": "2",
-      "type": "wine",
+      "id": null,
+      "type": "wines",
       "attributes": {
         "api_id": "546e64cf4c6458020000000d",
         "name": "Duckhorn",
-        "vintage": "2018",
-        "region": "Napa Valley"
+        "area": "Napa Valley",
+        "vintage": "2018"
       }
     }
   ]
