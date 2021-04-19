@@ -8,7 +8,7 @@ RSpec.describe 'the wine search request' do
 
       stub_microservice_request(expected)
 
-      get api_v1_wines_search_path(region: 'napa', vintage: '2018')
+      get api_v1_wines_search_path(location: 'napa', vintage: '2018')
 
       expect(response).to be_successful
       data = JSON.parse(response.body, symbolize_names: true)
@@ -32,7 +32,7 @@ RSpec.describe 'the wine search request' do
 
       stub_microservice_request(expected)
 
-      get api_v1_wines_search_path(region: 'napa', vintage: '2018')
+      get api_v1_wines_search_path(location: 'napa', vintage: '2018')
 
       expect(response).to be_successful
       data = JSON.parse(response.body, symbolize_names: true)

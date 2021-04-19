@@ -1,6 +1,6 @@
 class Api::V1::Wines::SearchController < ApplicationController
   def index
-    render json: WineSearchResultSerializer.new(fetch_search_results(params[:region], params[:vintage]))
+    render json: WineSearchResultSerializer.new(fetch_search_results(params[:location], params[:vintage]))
   end
 
   private
