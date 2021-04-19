@@ -1,46 +1,18 @@
 {
-  "data": [
-    {
-      "id": "nil",
-      "type": "wine",
-      "attributes": {
-        "id": "nil",
-        "api_id": "5f065fb5fbfd6e17acaad294",
-        "name": "Duckhorn The Discussion Red 2012",
-        "winery": "Duckhorn Vineyards",
-        "vintage": "2018",
-        "country": "USA",
-        "area": "Napa Valley",
-        "style": "",
-        "varietal": "Cabernet Sauvignon, Merlot",
-        "type": "Red",
-        "eye": "Translucent rim, Translucent depth",
-        "nose": "Oak, Berry, Blackberry aromas",
-        "mouth": "Oak, Berry, Blackberry flavours, Flat sweetness, Flat acidity, Rich tannins, Warm alcohol",
-        "finish": "Medium duration, Good quality, Late peaktime",
-        "overall": "Subtle complexity, Memorable interest, Expected typicity, Harmonious balance"
-      }
-    },
-    {
-      "id": "nil",
-      "type": "wine",
-      "attributes": {
-        "id": "nil",
-        "api_id": "546e64cf4c6458020000000d",
-        "name": "Duckhorn Sauvignon Blanc",
-        "winery": "Duckhorn Vineyards",
-        "vintage": "2018",
-        "country": "USA",
-        "area": "Napa Valley",
-        "style": "",
-        "varietal": "Sauvignon Blanc",
-        "type": "White",
-        "eye": "",
-        "nose": "Citrus, Earthy aromas",
-        "mouth": "Citrus, Earthy flavours, Fresh acidity, Warm alcohol",
-        "finish": "Medium duration, Good quality, Middle peaktime",
-        "overall": "Subtle complexity, Pleasant interest, Harmonious balance"
-      }
+  "data": {
+    "id": null,
+    "type": "w",
+    "attributes": {
+      "id": null,
+      "api_id": "546e64cf4c6458020000000d",
+      "name": "Duckhorn Sauvignon Blanc",
+      "area": "Napa Valley",
+      "vintage": "2018",
+      "eye": "",
+      "nose": "Citrus, Earthy aromas",
+      "mouth": "Citrus, Earthy flavours, Fresh acidity, Warm alcohol",
+      "finish": "Medium duration, Good quality, Middle peaktime",
+      "overall": "Subtle complexity, Pleasant interest, Harmonious balance"
     }
-  ]
+  }
 }
