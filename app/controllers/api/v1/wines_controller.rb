@@ -1,6 +1,9 @@
 class Api::V1::WinesController < ApplicationController
   def show
-    big_ol_obj = fetch_all_the_things(params[:id])
+    wine_show_data = fetch_all_the_things(params[:id])
+    f = WineWeatherSerializer.new(wine_show_data)
+    require "pry"; binding.pry
+    render JSON: WineWeatherSerializer.new(wine_show_data)
   end
 end
 
@@ -13,12 +16,12 @@ def fetch_all_the_things(wine_api_id)
   # Need to get weather info
   formatted_weather_data = fake_weather_data
 
-  # Need to combine the two
+  # Need to combine the two (and return the value)
   combine_data(formatted_wine_data, formatted_weather_data)
 end
 
 def fetch_raw_wine_data(api_id)
-  wine_connection.get("/wine/#{api_id}")
+  wine_connection.get("/wine-single?id=#{api_id}")
 end
 
 def format_wine_data(data)
@@ -26,13 +29,8 @@ def format_wine_data(data)
   OpenStruct.new({
     api_id: wine[:api_id],
     name: wine[:name],
-    winery: wine[:winery],
-    vintage: wine[:vintage],
-    country: wine[:country],
     area: wine[:area],
-    style: wine[:style],
-    varietal: wine[:varietal],
-    type: wine[:type],
+    vintage: wine[:vintage],
     eye: wine[:eye],
     nose: wine[:nose],
     mouth: wine[:mouth],
@@ -60,7 +58,8 @@ def combine_data(wine_data, weather_data)
   # TODO: going to have to change how this works
   # Need to get the wine & weather data to be hashes & not ostructs, I think
   # So we can save the data transforming time/cost
-  f = wine_data.to_h.merge(weather_data.to_h)
+  merged = wine_data.to_h.merge(weather_data.to_h)
+  OpenStruct.new(merged)
 end
 
 # TODO: notes

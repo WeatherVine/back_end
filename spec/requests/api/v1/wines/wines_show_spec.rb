@@ -4,7 +4,7 @@ RSpec.describe 'the wine show request' do
   describe 'happy path' do
     it 'returns correct structure' do
       expected_raw = File.read('spec/fixtures/wine_show_page_results.json')
-      expected = JSON.parse!(expected_raw, symbolize_names: true)
+      expected = JSON.parse(expected_raw, symbolize_names: true)
 
       stub_microservice_request(expected)
 
@@ -26,7 +26,7 @@ RSpec.describe 'the wine show request' do
 
     xit 'returns correct content' do
       expected_raw = File.read('spec/fixtures/wine_show_page_results.json')
-      expected = JSON.parse!(expected_raw, symbolize_names: true)
+      expected = JSON.parse(expected_raw, symbolize_names: true)
 
       stub_microservice_request(expected)
 
@@ -61,7 +61,7 @@ RSpec.describe 'the wine show request' do
   def stub_microservice_request(body)
     @wine = create(:wine, api_id: '546e64cf4c6458020000000d', name: 'Duckhorn Sauvignon Blanc')
 
-    full_url = "#{ENV['WINE_MICROSERVICE_URL']}/wine/#{@wine.api_id}"
+    full_url = "#{ENV['WINE_MICROSERVICE_URL']}/wine-single?id=#{@wine.api_id}"
     stub_request(:get, full_url)
       .to_return(
         status: 200,
@@ -72,16 +72,10 @@ RSpec.describe 'the wine show request' do
 
   def wine_attribute_keys
     [
-      :id,
       :api_id,
       :name,
-      :winery,
-      :vintage,
-      :country,
       :area,
-      :style,
-      :varietal,
-      :type,
+      :vintage,
       :eye,
       :nose,
       :mouth,
