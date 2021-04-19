@@ -9,7 +9,11 @@ Things you may want to cover:
 
 # Endpoints
 ### User Dashboard Data
->`GET https://weathervine-be.herokuapp.com/api/v1/users/:id/dashboard`
+`GET https://weathervine-be.herokuapp.com/api/v1/users/:id/dashboard`
+- **Required** path params:
+  - `:id` - valid user id
+
+>`GET https://weathervine-be.herokuapp.com/api/v1/users/1/dashboard`
 >```json
 >{
 >  "data": [
@@ -74,5 +78,32 @@ Things you may want to cover:
 >      }
 >    }
 >  ]
+>}
+>```
+
+### Wine Show Page Data
+`GET https://weathervine-be.herokuapp.com/api/v1/wines/:api_id`
+- **Required** path params:
+  - `:api_id` - id used to access wine info from external wine API
+
+>`GET https://weathervine-be.herokuapp.com/api/v1/wines/546e64cf4c6458020000000d`
+>```json
+>{
+>  "data": {
+>    "id": null,
+>    "api_id": "546e64cf4c6458020000000d",
+>    "name": "Duckhorn Sauvignon Blanc",
+>    "area": "Napa Valley",
+>    "vintage": "2018",
+>    "eye": "",
+>    "nose": "Citrus, Earthy aromas",
+>    "mouth": "Citrus, Earthy flavours, Fresh acidity, Warm alcohol",
+>    "finish": "Medium duration, Good quality, Middle peaktime",
+>    "overall": "Subtle complexity, Pleasant interest, Harmonious balance",
+>    "temp": "75",
+>    "precip": "100",
+>    "start_date": "2017-01-01",
+>    "end_date": "2017-12-31"
+>  }
 >}
 >```
