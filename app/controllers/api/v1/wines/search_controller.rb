@@ -5,8 +5,8 @@ class Api::V1::Wines::SearchController < ApplicationController
 
   private
 
-  def fetch_search_results(location, vintage)
-    response = wine_service_connection.get("/wine-data?location=#{location}&vintage=#{vintage}")
+  def fetch_search_results(region, vintage)
+    response = wine_service_connection.get("/api/v1/wine-data?location=#{region}&vintage=#{vintage}")
     wines = JSON.parse(response.body, symbolize_names: true)
 
     format_wine_response(wines[:data])
@@ -25,7 +25,7 @@ class Api::V1::Wines::SearchController < ApplicationController
         api_id: attributes[:api_id],
         name: attributes[:name],
         vintage: attributes[:vintage],
-        location: attributes[:area]
+        area: attributes[:area]
       })
     end
   end

@@ -7,6 +7,7 @@ Rails.application.routes.draw do
       namespace :wines do
         get '/search', to: 'search#index'
       end
+      resources :wines, only: :show
     end
   end
 end

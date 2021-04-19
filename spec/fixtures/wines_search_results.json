@@ -1,7 +1,7 @@
 {
   "data": [
     {
-      "id": "nil",
+      "id": null,
       "type": "wines",
       "attributes": {
         "id": "nil",
@@ -12,7 +12,7 @@
       }
     },
     {
-      "id": "nil",
+      "id": null,
       "type": "wines",
       "attributes": {
         "id": "nil",
