@@ -8,10 +8,7 @@ class Api::V1::Users::DashboardController < ApplicationController
     user_wine = UserWine.find_by(
       user_id: params[:user_id],
       wine_id: params[:wine_id]).destroy
-      # require "pry"; binding.pry
 
-    # user_wine = UserWine.find(params[:id])
-      # user_wine.destroy
     render json: user_wine
   end
 
