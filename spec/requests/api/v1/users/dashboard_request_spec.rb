@@ -46,7 +46,7 @@ RSpec.describe 'Dashboard Data Request' do
 
       expect(UserWine.count).to eq(1)
 
-      delete "/api/v1/users/#{user_wine.user_id}/wines/#{user_wine.wine_id}"
+      delete "/api/v1/users/#{user_wine.user_id}/wines/#{user_wine.wine_id}", params: {user_id: "#{user_wine.user_id}" , wine_id: "#{user_wine.wine_id}"}
 
       expect(response).to be_successful
       expect(UserWine.count).to eq(0)
