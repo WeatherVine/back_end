@@ -1,5 +1,4 @@
 class Api::V1::Users::WinesController < ApplicationController
-  
   def create
     user_wine = UserWine.create(user_wine_params)
     render json: UserWineSerializer.new(user_wine)
