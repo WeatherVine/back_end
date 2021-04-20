@@ -39,6 +39,19 @@ RSpec.describe 'Dashboard Data Request' do
       expect(attributes[:comment]).to be_a(String)
       expect(attributes[:comment]).to eq(user_wine.comment)
     end
+
+    it 'can destroy a wine from the user favorite wine list' do
+      wine = create(:wine)
+      user_wine = create(:user_wine, user_id: 1, wine_id: wine.id)
+
+      expect(UserWine.count).to eq(1)
+
+      delete "/api/v1/users/#{user_wine.user_id}/wines/#{user_wine.wine_id}"
+
+      expect(response).to be_successful
+      expect(UserWine.count).to eq(0)
+      expect{UserWine.find(wine.id)}.to raise_error(ActiveRecord::RecordNotFound)
+    end
   end
 
   describe 'sad path' do
