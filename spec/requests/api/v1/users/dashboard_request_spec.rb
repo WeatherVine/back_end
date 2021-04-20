@@ -63,5 +63,13 @@ RSpec.describe 'Dashboard Data Request' do
 
       expect(body[:data]).to be_empty
     end
+
+    it 'returns an error response if the user_wines record does not exist' do
+
+      delete "/api/v1/users/abcdef/wines/andglkgs"
+
+      expect(response).to_not be_successful
+      expect(response.status).to eq(404)
+    end
   end
 end
