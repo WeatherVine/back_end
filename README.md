@@ -107,3 +107,27 @@ Things you may want to cover:
 >  }
 >}
 >```
+
+### Create User Wine Data
+`POST https://weathervine-be.herokuapp.com/api/v1/users/:user_id/wines`
+- **Required** path params:
+  - `wine_id`
+  - `user_id`
+
+- **Optional** path params:
+  - `comment`
+
+>`POST https://weathervine-be.herokuapp.com/api/v1/users/1/wines?wine_id=23&user_id=10&comment=this+comment`
+>```json
+>{
+>  "data": {
+>    "id": "#{new user wine id}",
+>    "type": "user_wine",
+>    "attributes": {
+>      "wine_id": "23",
+>      "user_id": "1",
+>      "comment": "this comment"
+>    }
+>   }
+> }
+> ```
