@@ -3,6 +3,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       namespace :users do
         get '/:id/dashboard', to: 'dashboard#show', as: 'dashboard'
+        post '/:id/wines', to: 'wines#create', as: 'wines'
       end
       namespace :wines do
         get '/search', to: 'search#index'
