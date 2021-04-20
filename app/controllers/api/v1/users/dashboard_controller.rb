@@ -5,7 +5,7 @@ class Api::V1::Users::DashboardController < ApplicationController
   end
 
   def destroy
-    user_wine = UserWine.find_by(
+    user_wine = UserWine.find_by!(
       user_id: params[:user_id],
       wine_id: params[:wine_id]).destroy
 
