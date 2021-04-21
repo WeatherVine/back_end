@@ -1,0 +1,32 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:9393/api/v1/wine-data?location=napa&vintage=2018
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.4.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      X-Content-Type-Options:
+      - nosniff
+      Content-Length:
+      - '862'
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJkYXRhIjpbeyJpZCI6bnVsbCwidHlwZSI6IndpbmVzIiwiYXR0cmlidXRlcyI6eyJpZCI6bnVsbCwiYXBpX2lkIjoiNWVlYWNjNWExZWQ5ZjQzZjBkYjNhODAzIiwibmFtZSI6IkJyZWFkIFx1MDAyNiBCdXR0ZXIgUm9zw6kgMjAxOCIsImFyZWEiOiJOYXBhIFZhbGxleSIsInZpbnRhZ2UiOiIyMDE4In19LHsiaWQiOm51bGwsInR5cGUiOiJ3aW5lcyIsImF0dHJpYnV0ZXMiOnsiaWQiOm51bGwsImFwaV9pZCI6IjVmOTE5YzRiYzhhYmIzMGRkNjNiOWNkMSIsIm5hbWUiOiJWZW5nZSBWaW5leWFyZHMgU2lsZW5jaWV1eCBDYWJlcm5ldCBTYXV2aWdub24gMjAxOCIsImFyZWEiOiJOYXBhIFZhbGxleSIsInZpbnRhZ2UiOiIyMDE4In19LHsiaWQiOm51bGwsInR5cGUiOiJ3aW5lcyIsImF0dHJpYnV0ZXMiOnsiaWQiOm51bGwsImFwaV9pZCI6IjVmM2ZkOTAzYzVkN2JkMjljMmU3MTg0MiIsIm5hbWUiOiIxODgxIE5hcGEgQ2FiZXJuZXQgU2F1dmlnbm9uIDIwMTgiLCJhcmVhIjoiTmFwYSBWYWxsZXkiLCJ2aW50YWdlIjoiMjAxOCJ9fSx7ImlkIjpudWxsLCJ0eXBlIjoid2luZXMiLCJhdHRyaWJ1dGVzIjp7ImlkIjpudWxsLCJhcGlfaWQiOiI1ZjA2NWZiNWZiZmQ2ZTE3YWNhYWQxNmIiLCJuYW1lIjoiQ2xpZmYgTGVkZSBTYXV2aWdub24gQmxhbmMgMjAxOCIsImFyZWEiOiJOYXBhIFZhbGxleSIsInZpbnRhZ2UiOiIyMDE4In19LHsiaWQiOm51bGwsInR5cGUiOiJ3aW5lcyIsImF0dHJpYnV0ZXMiOnsiaWQiOm51bGwsImFwaV9pZCI6IjVlMzJmYWMyYTBkNWEzNTY2NTZhNmU5OSIsIm5hbWUiOiJDaGFybGVzIEtydWcgU2F1dmlnbm9uIEJsYW5jIiwiYXJlYSI6Ik5hcGEgVmFsbGV5IiwidmludGFnZSI6IjIwMTgifX1dfQ==
+  recorded_at: Wed, 21 Apr 2021 22:38:44 GMT
+recorded_with: VCR 6.0.0
