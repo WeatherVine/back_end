@@ -1,15 +1,12 @@
 class Api::V1::Users::WinesController < ApplicationController
   before_action :create_wine, only: [:create]
+
   def create
     user_wine = UserWine.create(user_id: params[:user_wine][:user_id], wine_id: @wine.id, comment: params[:user_wine][:comment])
     render json: UserWineSerializer.new(user_wine)
   end
 
   private
-
-  def user_wine_params
-    params.require(:user_wine).permit(:wine_id, :user_id, :comment)
-  end
 
   def create_wine
     @wine = Wine.find_or_create_by(api_id: params[:user_wine][:wine_id]) do |wine|
