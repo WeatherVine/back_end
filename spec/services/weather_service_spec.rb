@@ -1,24 +1,19 @@
 require 'rails_helper'
+require 'ostruct'
 
-RSpec.describe 'the weather show request' do
+RSpec.describe WeatherService do
   describe 'happy path' do
-    it 'returns correct structture' do
+    it 'fetches weather data for a given year and region' do
       expected_raw = File.read('spec/fixtures/weather_show_results.json')
       expected = JSON.parse!(expected_raw, symbolize_names: true)
 
       stub_microservice_request(expected)
-      response = WeatherService.weather_connection.get("/climate_data?vintage=2015&region=napa+valley")
+      response = WeatherService.fetch_weather('2015', 'napa valley')
 
-      expect(response.success?).to eq(true)
-      result = JSON.parse(response.body, symbolize_names: true)
-
-      expect(result.length).to eq(1)
-      expect(result.keys).to eq([:data])
-      expect(result[:data].keys).to eq([:id, :type, :attributes])
-      expect(result[:data][:attributes].keys).to eq([:precip, :temp, :region, :vintage, :start_date, :end_date])
+      expect(response).to be_an(OpenStruct)
+      # we need to add more expectations to test the structure
     end
   end
-
   def stub_microservice_request(body)
     full_url = "#{ENV['WEATHER_MICROSERVICE_URL']}/climate_data?vintage=2015&region=napa+valley"
     stub_request(:get, full_url)
