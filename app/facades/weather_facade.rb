@@ -1,4 +1,4 @@
-# class WFacade
+  # class WFacade
 
   # def self.fetch(weather_data)
   #   weather_info = WeatherService.fetch_raw_weather_data(vintage, region)
@@ -21,12 +21,12 @@
   #
   # def self.format_weather_data(data)
   #   weather = data[:data][:attributes]
-  #   OpenStruct.new({
-  #     precip: weather[:precip],
-  #     temp: weather[:temp],
-  #     region: weather[:region],
-  #     start_date: weather[:start_date],
-  #     end_date: weather[:end_date]
-  #   })
+  #     OpenStruct.new({
+  #       precip: weather[:precip],
+  #       temp: weather[:temp],
+  #       region: weather[:region],
+  #       start_date: weather[:start_date],
+  #       end_date: weather[:end_date]
+  #     })
   # end
 # end

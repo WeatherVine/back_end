@@ -24,9 +24,9 @@ class WineFacade
     # formatted_wine_data = format_wine_data(parsed_response[:data])
 
     # Need to get weather info
-    wine_data = self.fetch_wine_info(wine_api_id)
+    wine_data = fetch_wine_info(wine_api_id)
 
-    weather_data = self.fetch_weather_info(wine_data.vintage, wine_data.area)
+    weather_data = fetch_weather_info(wine_data.vintage, wine_data.area)
     # Need to combine the two (and return the value)
     combine_data(wine_data, weather_data)
   end

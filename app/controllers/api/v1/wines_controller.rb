@@ -6,7 +6,7 @@ class Api::V1::WinesController < ApplicationController
     # combine_data = WineFacade.combine_data(wine_data, weather_data)
   end
 
- # WineFacade.fetch_all_the_things(wine_api_id)
+  # WineFacade.fetch_all_the_things(wine_api_id)
   # Need to get wine info
   # response = fetch_raw_wine_data(wine_api_id)
   # parsed_response = JSON.parse(response.body, symbolize_names: true)
@@ -39,7 +39,7 @@ class Api::V1::WinesController < ApplicationController
   #     overall: wine[:overall]
   #   })
   # end
-# rubocop:enable Metrics/MethodLength
+  # rubocop:enable Metrics/MethodLength
 
   # def wine_connection
   #   @wine_connection ||= Faraday.new({

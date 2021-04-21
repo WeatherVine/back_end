@@ -9,6 +9,9 @@ class WineService
     })
   end
 
+  # Disabling rubocop method length for this method, since it's over the length
+  #   but only because we are declaring each hash kvp on it's own line
+  # rubocop:disable Metrics/MethodLength
   def self.format_wine_data(data)
     wine = data[:attributes]
     OpenStruct.new({
@@ -23,11 +26,12 @@ class WineService
       overall: wine[:overall]
     })
   end
+  # rubocop:enable Metrics/MethodLength
 
   def self.fetch_wine(wine_api_id)
     # Need to get wine info
     response = fetch_raw_wine_data(wine_api_id)
     parsed_response = JSON.parse(response.body, symbolize_names: true)
-    formatted_wine_data = format_wine_data(parsed_response[:data])
+    format_wine_data(parsed_response[:data])
   end
 end

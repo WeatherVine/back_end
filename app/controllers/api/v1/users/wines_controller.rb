@@ -8,7 +8,6 @@ class Api::V1::Users::WinesController < ApplicationController
     render json: UserWineSerializer.new(user_wine)
   end
 
-
   private
 
   def user_wine_params
