@@ -7,7 +7,7 @@ RSpec.describe 'the weather show request' do
       expected = JSON.parse!(expected_raw, symbolize_names: true)
 
       stub_microservice_request(expected)
-      response = WeatherFacade.weather_connection.get("/climate_data?vintage=2015&region=napa+valley")
+      response = WeatherService.weather_connection.get("/climate_data?vintage=2015&region=napa+valley")
 
       expect(response.success?).to eq(true)
       result = JSON.parse(response.body, symbolize_names: true)
