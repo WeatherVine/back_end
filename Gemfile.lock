@@ -208,6 +208,7 @@ GEM
       pusher-client (~> 0.4)
     tzinfo (1.2.9)
       thread_safe (~> 0.1)
+    vcr (6.0.0)
     webmock (3.12.2)
       addressable (>= 2.3.6)
       crack (>= 0.3.2)
@@ -237,6 +238,7 @@ DEPENDENCIES
   simplecov
   travis
   tzinfo-data
+  vcr
   webmock
 
 RUBY VERSION
