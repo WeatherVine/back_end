@@ -1,4 +1,5 @@
-# Weather Vine Front End Application
+# Weather Vine Back End Application!
+![IMG_0021](https://user-images.githubusercontent.com/72848529/115639403-ba284d00-a2d1-11eb-84b0-dc1973d4e42c.PNG)
 
 ## About this Project
 Weather Vine is an educational app for consumers to connect more deeply with the wine they enjoy. Explore wines from a region and see how the climate has influenced the very wine one drinks!   
@@ -173,6 +174,23 @@ The following is a depiction of our Database Schema
 >   }
 > }
 > ```
+
+### Destroy User Wine Data
+`DELETE https://weathervine-be.herokuapp.com/api/v1/users/:user_id/wines/:user_wine_id`
+
+- **Required** path params:
+  - `wine_id`
+  - `user_id`
+
+> `DELETE https://weathervine-be.herokuapp.com/api/v1/users/:user_id/wines/:user_wine_id?user_id=1&wine_id=12`
+> ```json
+> { "id": "#{user wine id}",
+>   "wine_id": "12",
+>   "user_id": "1",
+>   "comment": "#{user wine comment}",
+>   "created_at": "#{user wine created at}",
+>   "updated_at": "#{user wine updated at}"
+
 
 ## Built With
 - Ruby
