@@ -1,0 +1,35 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:9393/api/v1/wine-single?id=546e64cf4c6458020000000d
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.4.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      X-Content-Type-Options:
+      - nosniff
+      Content-Length:
+      - '378'
+    body:
+      encoding: UTF-8
+      string: '{"data":{"id":null,"type":"w","attributes":{"id":null,"api_id":"546e64cf4c6458020000000d","name":"Duckhorn","area":"Napa
+        Valley","vintage":"2013","eye":"","nose":"Citrus, Earthy aromas","mouth":"Citrus,
+        Earthy flavours, Fresh acidity, Warm alcohol","finish":"Medium duration, Good
+        quality, Middle peaktime","overall":"Subtle complexity, Pleasant interest,
+        Harmonious balance"}}}'
+  recorded_at: Wed, 21 Apr 2021 23:46:14 GMT
+recorded_with: VCR 6.0.0
