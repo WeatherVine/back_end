@@ -47,7 +47,7 @@ The following is a depiction of the overall service oriented architecture for th
 ## DB Schema
 The following is a depiction of our Database Schema
 
-![db schema]
+ ![db_schema](https://user-images.githubusercontent.com/72848529/115637106-a62e1c80-a2cc-11eb-9892-1beec342e935.png)
 
 ## Endpoints
 ### User Dashboard Data
