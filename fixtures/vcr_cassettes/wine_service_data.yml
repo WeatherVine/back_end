@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://localhost:9393/api/v1/wine-data?location=napa&vintage=2018
+    uri: https://wine-service-sinatra.herokuapp.com/api/v1/wine-data?location=napa&vintage=2018
     body:
       encoding: US-ASCII
       string: ''
@@ -16,17 +16,25 @@ http_interactions:
   response:
     status:
       code: 200
-      message: OK
+      message: 'OK '
     headers:
+      Connection:
+      - keep-alive
       Content-Type:
       - application/json
-      X-Content-Type-Options:
-      - nosniff
       Content-Length:
       - '862'
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - WEBrick/1.4.2 (Ruby/2.5.3/2018-10-18)
+      Date:
+      - Thu, 22 Apr 2021 23:05:03 GMT
+      Via:
+      - 1.1 vegur
     body:
       encoding: ASCII-8BIT
       string: !binary |-
         eyJkYXRhIjpbeyJpZCI6bnVsbCwidHlwZSI6IndpbmVzIiwiYXR0cmlidXRlcyI6eyJpZCI6bnVsbCwiYXBpX2lkIjoiNWVlYWNjNWExZWQ5ZjQzZjBkYjNhODAzIiwibmFtZSI6IkJyZWFkIFx1MDAyNiBCdXR0ZXIgUm9zw6kgMjAxOCIsImFyZWEiOiJOYXBhIFZhbGxleSIsInZpbnRhZ2UiOiIyMDE4In19LHsiaWQiOm51bGwsInR5cGUiOiJ3aW5lcyIsImF0dHJpYnV0ZXMiOnsiaWQiOm51bGwsImFwaV9pZCI6IjVmOTE5YzRiYzhhYmIzMGRkNjNiOWNkMSIsIm5hbWUiOiJWZW5nZSBWaW5leWFyZHMgU2lsZW5jaWV1eCBDYWJlcm5ldCBTYXV2aWdub24gMjAxOCIsImFyZWEiOiJOYXBhIFZhbGxleSIsInZpbnRhZ2UiOiIyMDE4In19LHsiaWQiOm51bGwsInR5cGUiOiJ3aW5lcyIsImF0dHJpYnV0ZXMiOnsiaWQiOm51bGwsImFwaV9pZCI6IjVmM2ZkOTAzYzVkN2JkMjljMmU3MTg0MiIsIm5hbWUiOiIxODgxIE5hcGEgQ2FiZXJuZXQgU2F1dmlnbm9uIDIwMTgiLCJhcmVhIjoiTmFwYSBWYWxsZXkiLCJ2aW50YWdlIjoiMjAxOCJ9fSx7ImlkIjpudWxsLCJ0eXBlIjoid2luZXMiLCJhdHRyaWJ1dGVzIjp7ImlkIjpudWxsLCJhcGlfaWQiOiI1ZjA2NWZiNWZiZmQ2ZTE3YWNhYWQxNmIiLCJuYW1lIjoiQ2xpZmYgTGVkZSBTYXV2aWdub24gQmxhbmMgMjAxOCIsImFyZWEiOiJOYXBhIFZhbGxleSIsInZpbnRhZ2UiOiIyMDE4In19LHsiaWQiOm51bGwsInR5cGUiOiJ3aW5lcyIsImF0dHJpYnV0ZXMiOnsiaWQiOm51bGwsImFwaV9pZCI6IjVlMzJmYWMyYTBkNWEzNTY2NTZhNmU5OSIsIm5hbWUiOiJDaGFybGVzIEtydWcgU2F1dmlnbm9uIEJsYW5jIiwiYXJlYSI6Ik5hcGEgVmFsbGV5IiwidmludGFnZSI6IjIwMTgifX1dfQ==
-  recorded_at: Wed, 21 Apr 2021 22:38:44 GMT
+  recorded_at: Thu, 22 Apr 2021 23:05:03 GMT
 recorded_with: VCR 6.0.0
