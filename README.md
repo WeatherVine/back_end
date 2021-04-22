@@ -1,13 +1,55 @@
-# README
+# Weather Vine Front End Application
 
-This README would normally document whatever steps are necessary to get the application up and running.
+## About this Project
+Weather Vine is an educational app for consumers to connect more deeply with the wine they enjoy. Explore wines from a region and see how the climate has influenced the very wine one drinks!   
 
-Things you may want to cover:
+## Table of Contents
 
-* Rails version
-5.2.5
+  - [Getting Started](#getting-started)
+  - [Running the tests](#running-the-tests)
+  - [Service Oriented Architecture](#service-oriented-architecture)
+  - [DB Schema](#db-schema)
+  - [Endpoints](#endpoints)
+  - [Built With](#built-with)
+  - [Contributing](#contributing)
+  - [Versioning](#versioning)
+  - [Authors](#authors)
+  - [License](#license)
+  - [Acknowledgments](#acknowledgments)
 
-# Endpoints
+## Getting Started
+
+To get the web application running, please fork and clone down the repo.
+`git clone <your@github.account:WeatherVine/back_end.git>`
+
+### Prerequisites
+
+To run this application you will need Ruby 2.5.3 and Rails 5.2.5
+
+### Installing
+
+- Install the gem packages  
+`bundle install`
+
+- Create the database by running the following command in your terminal
+`rails db{:drop, :create, :migrate}`
+
+## Running the tests
+RSpec testing suite is utilized for testing this application.
+- Run the RSpec suite to ensure everything is passing as expected  
+`bundle exec rspec`
+
+## Service Oriented Architecture
+The following is a depiction of the overall service oriented architecture for this application which includes a Rails Front End application, a Rails Engine on the Back End, and two microservices that call out to a World Weather Online's api and Quini Wine's api:
+
+ ![service_oriented_architecture](https://user-images.githubusercontent.com/23460878/115339977-77e4fb80-a16b-11eb-8653-cf989f600b57.png)
+ 
+## DB Schema
+The following is a depiction of our Database Schema
+
+![db schema]
+
+## Endpoints
 ### User Dashboard Data
 `GET https://weathervine-be.herokuapp.com/api/v1/users/:id/dashboard`
 - **Required** path params:
@@ -131,3 +173,39 @@ Things you may want to cover:
 >   }
 > }
 > ```
+
+## Built With
+- Ruby
+- Rails
+- RSpec
+- FactoryBot
+- Faker
+
+
+## Versioning
+- Ruby 2.5.3
+- Rails 5.2.5
+
+## Authors
+- **Adam Bowers**
+| [GitHub](https://github.com/Pragmaticpraxis37) |
+  [LinkedIn](https://www.linkedin.com/in/adam-bowers-06a871209/)
+- **Alex Schwartz**
+| [GitHub](https://github.com/aschwartz1) |
+  [LinkedIn](https://www.linkedin.com/in/alex-s-77659758/)
+- **Diana Buffone**
+| [GitHub](https://github.com/Diana20920) |
+  [LinkedIn](https://www.linkedin.com/in/dianabuffone/)
+- **Katy La Tour**
+| [GitHub](https://github.com/klatour324) |
+  [LinkedIn](https://www.linkedin.com/in/klatour324/)
+- **Tommy Nieuwenhuis**
+|  [GitHub](https://github.com/tsnieuwen) |
+    [LinkedIn](https://www.linkedin.com/in/thomasnieuwenhuis/)
+- **Trevor Suter**
+|    [GitHub](https://github.com/trevorsuter) |
+    [LinkedIn](https://www.linkedin.com/in/trevor-suter-216207203/)
+- **Wil McCauley**
+|    [GitHub](https://github.com/wil-mcc) |
+    [LinkedIn](https://www.linkedin.com/in/wil-mccauley/)
+
