@@ -15,4 +15,5 @@ deploy:
   app: weathervine-be
   on:
     repo: WeatherVine/back_end
+    branch: main
   skip_cleanup: 'true'
