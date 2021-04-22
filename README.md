@@ -190,6 +190,7 @@ The following is a depiction of our Database Schema
 >   "comment": "#{user wine comment}",
 >   "created_at": "#{user wine created at}",
 >   "updated_at": "#{user wine updated at}"
+> }
 
 
 ## Built With
