@@ -1,0 +1,36 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:9393/api/v1/wine-single?id=5f065fb5fbfd6e17acaad294
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.4.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      X-Content-Type-Options:
+      - nosniff
+      Content-Length:
+      - '499'
+    body:
+      encoding: UTF-8
+      string: '{"data":{"id":null,"type":"w","attributes":{"id":null,"api_id":"5f065fb5fbfd6e17acaad294","name":"Duckhorn
+        The Discussion Red 2012","area":"Napa Valley","vintage":"2012","eye":"Translucent
+        rim, Translucent depth","nose":"Oak, Berry, Blackberry aromas","mouth":"Oak,
+        Berry, Blackberry flavours, Flat sweetness, Flat acidity, Rich tannins, Warm
+        alcohol","finish":"Medium duration, Good quality, Late peaktime","overall":"Subtle
+        complexity, Memorable interest, Expected typicity, Harmonious balance"}}}'
+  recorded_at: Thu, 22 Apr 2021 01:40:43 GMT
+recorded_with: VCR 6.0.0

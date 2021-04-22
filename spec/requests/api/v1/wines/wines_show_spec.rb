@@ -4,11 +4,6 @@ RSpec.describe 'the wine show request' do
   describe 'happy path' do
     it 'returns correct structure' do
       VCR.use_cassette("one-wine-show-page-info") do
-        # expected_raw = File.read('spec/fixtures/wine_show_page_results.json')
-        # expected = JSON.parse(expected_raw, symbolize_names: true)
-
-        # stub_microservice_request(expected)
-        # stub_weather_microservice_request
         @wine = create(:wine, api_id: '546e64cf4c6458020000000d', name: 'Duckhorn Sauvignon Blanc')
 
         get api_v1_wine_path(id: @wine.api_id)
@@ -30,11 +25,6 @@ RSpec.describe 'the wine show request' do
 
     it 'returns correct content' do
       VCR.use_cassette("one-wine-show-page-info") do
-        # expected_raw = File.read('spec/fixtures/wine_show_page_results.json')
-        # expected = JSON.parse(expected_raw, symbolize_names: true)
-
-        # stub_microservice_request(expected)
-        # stub_weather_microservice_request
         @wine = create(:wine, api_id: '546e64cf4c6458020000000d', name: 'Duckhorn Sauvignon Blanc')
 
         get api_v1_wine_path(id: @wine.api_id)
