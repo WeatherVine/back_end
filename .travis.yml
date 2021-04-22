@@ -4,7 +4,7 @@ rbenv:
 addons:
   postgresql: 9.6
 before_install:
-- gem install bundler:2.1.4
+- gem install bundler
 script:
 - bundle exec rails db:{create,migrate} RAILS_ENV=test
 - bundle exec rspec
@@ -12,6 +12,7 @@ deploy:
   provider: heroku
   api_key--com:
     secure: O+WDkRWT3JBZcg654kPSSe0vlZfOqVP6/GCZZ7njq+sanF5V0USp8aMEew2w75I6aCIOjMyGx427Gui3QRfhpqp+qF5PEWgrC7YDnfPWOvpk3aEP0/+C3tXsdQZg1ong2qfEWtWAoqeA4q/tvfL81V1ceHxL0bLLZxVEcmK0FkDNKw3yAb7udt9OmeWIndKF/FlkHLsCZ4aH6L2f8pzfT/i3oSNGiNTm0wkCveztejX/w/w9FLFs+tf6yKJ/eTBUd6OaOVZwAn7EEcejp4hCeb5lPyQ2X7qhI3sN8t6w588zedVlahu5euo5KTBCTZAiXNi6u6/QCIzPl4nOFnnC1lfvzVr0dQjIqA6WSzP64bBDmWKG3gaUurJFET9wavkyQ8W1LxuYqmNZ5TBgGph+Lk1sU06puCXnNirqVOG1UhEiQxfpEMH7SgPUc1B1pZYfEGQsQ16307B2kM0BAbycwljdObZ35cIPKpIt6qk0EqunoTXj7z2RlFdyQEiYpjJS2SyhN7vjjNybm27z5ng8aqiqp6wmCflAx+6sNAQqt48KULhGxzkTTgbfY4YQlezKgUmBg5sElZEueh7tUNqVzmvPKFgUouC3M5Ozc1UEKOJ5jzsp1bmat/p3xELSdlZqNkGP6Cgr6A7v8BSjXtu4lvqDySzZfiPlSgVOv6SDi1Q=
+
   app: weathervine-be
   on:
     repo: WeatherVine/back_end
