@@ -4,7 +4,7 @@ class WineService
   end
 
   def self.wine_connection
-    wine_connection ||= Faraday.new({
+    @wine_connection ||= Faraday.new({
       url: ENV['WINE_MICROSERVICE_URL']
     })
   end
