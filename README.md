@@ -7,21 +7,28 @@ Weather Vine is an educational app for consumers to connect more deeply with the
 ## Table of Contents
 
   - [Getting Started](#getting-started)
+  - [Other Repos](#other-repos)
   - [Running the tests](#running-the-tests)
   - [Service Oriented Architecture](#service-oriented-architecture)
   - [DB Schema](#db-schema)
   - [Endpoints](#endpoints)
   - [Built With](#built-with)
-  - [Contributing](#contributing)
   - [Versioning](#versioning)
   - [Authors](#authors)
-  - [License](#license)
-  - [Acknowledgments](#acknowledgments)
 
 ## Getting Started
 
 To get the web application running, please fork and clone down the repo.
 `git clone <your@github.account:WeatherVine/back_end.git>`
+
+## Other Repos
+
+- Weather Vine Front-End Application
+  - [Repo](https://github.com/WeatherVine/front_end) | [Heroku](https://weathervine-fe.herokuapp.com/)
+- Weather Vine Wine Microservice
+  - [Repo](https://github.com/WeatherVine/wine_service) | [Heroku](https://wine-service-sinatra.herokuapp.com/)
+- Weather Vine Weather Microservice
+  - [Repo](https://github.com/WeatherVine/weather_service) | [Heroku](https://weather-service-sinatra.herokuapp.com/)
 
 ### Prerequisites
 
