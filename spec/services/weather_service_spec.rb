@@ -17,11 +17,6 @@ RSpec.describe WeatherService do
 
     it 'can test the data structure of the API data received from the call' do
       VCR.use_cassette("weather_service_data") do
-        # expected_raw = File.read('spec/fixtures/weather_show_results.json')
-        # json_result = JSON.parse!(expected_raw, symbolize_names: true)
-
-        # stub_microservice_request(json_result)
-
         response = WeatherService.fetch_weather('2015', 'napa valley')
 
         expect(response.temp).to eq(81)
@@ -31,13 +26,4 @@ RSpec.describe WeatherService do
       end
     end
   end
-  # def stub_microservice_request(body)
-  #   full_url = "#{ENV['WEATHER_MICROSERVICE_URL']}/climate_data?vintage=2015&region=napa+valley"
-  #   stub_request(:get, full_url)
-  #     .to_return(
-  #       status: 200,
-  #       body: body.to_json,
-  #       headers: {'Content-Type'=> 'application/json'}
-  #     )
-  # end
 end
