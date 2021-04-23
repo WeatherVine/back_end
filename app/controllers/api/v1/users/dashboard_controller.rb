@@ -5,9 +5,11 @@ class Api::V1::Users::DashboardController < ApplicationController
   end
 
   def destroy
+    wine = Wine.find_by(api_id: params[:wine_id])
+
     user_wine = UserWine.find_by!(
       user_id: params[:user_id],
-      wine_id: params[:wine_id]
+      wine_id: wine.id
     ).destroy
 
     render json: user_wine
