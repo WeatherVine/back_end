@@ -5,6 +5,11 @@ class Api::V1::Users::DashboardController < ApplicationController
   end
 
   def destroy
+    if !(params[:user_id].to_i.positive? && params[:wine_id].to_i.positive?)
+      render json: "No record found", status: 404
+      return
+    end
+
     wine = Wine.find_by(api_id: params[:wine_id])
 
     user_wine = UserWine.find_by!(
