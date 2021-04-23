@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://weather-service-sinatra.herokuapp.com/api/v1/climate_data?region=napa%20valley&vintage=2015
+    uri: http://localhost:9394/api/v1/climate_data?region=napa%20valley&vintage=2015
     body:
       encoding: US-ASCII
       string: ''
@@ -18,8 +18,6 @@ http_interactions:
       code: 200
       message: 'OK '
     headers:
-      Connection:
-      - keep-alive
       Content-Type:
       - application/json
       Content-Length:
@@ -29,12 +27,12 @@ http_interactions:
       Server:
       - WEBrick/1.4.2 (Ruby/2.5.3/2018-10-18)
       Date:
-      - Thu, 22 Apr 2021 23:05:12 GMT
-      Via:
-      - 1.1 vegur
+      - Fri, 23 Apr 2021 02:26:01 GMT
+      Connection:
+      - Keep-Alive
     body:
       encoding: UTF-8
       string: '{"data":{"id":null,"type":"climate","attributes":{"temp":81,"precip":61.0,"vintage":"2015","region":"napa
         valley","start_date":"2014-01-01","end_date":"2014-12-31"}}}'
-  recorded_at: Thu, 22 Apr 2021 23:05:12 GMT
+  recorded_at: Fri, 23 Apr 2021 02:26:01 GMT
 recorded_with: VCR 6.0.0

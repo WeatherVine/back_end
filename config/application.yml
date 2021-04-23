@@ -1,6 +1,7 @@
-BACK_END_URL: https://weathervine-be.herokuapp.com
-FRONT_END_URL: https://weathervine-fe.herokuapp.com
-WEATHER_MICROSERVICE_URL: https://weather-service-sinatra.herokuapp.com
+WINE_MICROSERVICE_URL: http://localhost:9393
+WEATHER_MICROSERVICE_URL: http://localhost:9394
+# WINE_MICROSERVICE_URL: https://wine-service-sinatra.herokuapp.com
+# WEATHER_MICROSERVICE_URL: https://weather-service-sinatra.herokuapp.com
 
 # Add configuration values here, as shown below.
 #
